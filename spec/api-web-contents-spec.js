@@ -285,4 +285,10 @@ describe('webContents module', function () {
     })
     w.webContents.inspectElement(10, 10)
   })
+
+  describe('startDrag({file, icon})', () => {
+    it('does not crash when the icon is empty', () => {
+      ipcRenderer.send('start-drag', w.webContents.id, path.join(__dirname, 'does-not-exist.js'), __filename)
+    })
+  })
 })

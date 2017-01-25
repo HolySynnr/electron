@@ -249,3 +249,7 @@ ipcMain.on('create-window-with-options-cycle', (event) => {
 ipcMain.on('prevent-next-new-window', (event, id) => {
   webContents.fromId(id).once('new-window', event => event.preventDefault())
 })
+
+ipcMain.on('start-drag', (event, id, file, icon) => {
+  webContents.fromId(id).startDrag({file, icon})
+})
