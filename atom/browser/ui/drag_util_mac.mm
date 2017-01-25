@@ -46,7 +46,7 @@ void DragFileItems(const std::vector<base::FilePath>& files,
                                           pressure:1.0];
 
   // Run the drag operation.
-  [[view window] dragImage:icon.ToNSImage()
+  [[view window] dragImage:icon.AsNSImage()
                         at:position
                     offset:NSZeroSize
                      event:dragEvent
